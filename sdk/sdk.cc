@@ -137,7 +137,7 @@ unsigned long GetTickCount()
 #endif
 
 #ifndef WIN_DRIVER
-bool g_serial_is_correct = false;
+bool g_serial_is_correct = true;
 bool g_serial_is_blacklisted = false;
 uint32_t g_time_of_start = GetTickCount();
 #endif
@@ -452,7 +452,7 @@ int VMP_API VMProtectSetSerialNumber(const char *serial)
 	serial;
 	return SERIAL_STATE_FLAG_INVALID;
 #else
-	g_serial_is_correct = false;
+	g_serial_is_correct = true;
 	g_serial_is_blacklisted = false;
 	if (!serial || !serial[0]) 
 		return SERIAL_STATE_FLAG_INVALID;
